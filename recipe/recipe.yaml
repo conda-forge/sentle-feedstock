@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: 2025.10.1
+  version: "2025.12.1"
   python_min: '3.11'
 
 package:
@@ -9,8 +9,8 @@ package:
   version: ${{ version }}
 
 source:
-- url: https://pypi.org/packages/source/s/sentle/sentle-${{ version }}.tar.gz
-  sha256: 431938c693ae905bff90723d307d44f1464090e8f987f1572fbba70c3b1a7f79
+  - url: https://pypi.org/packages/source/s/sentle/sentle-${{ version }}.tar.gz
+    sha256: a5fa74c2926de02ea130a1360d0f030f34ac0230c76037d4eda69d05536ac921
 
 build:
   script: ${{ PYTHON }} -m pip install .
@@ -19,35 +19,35 @@ build:
 
 requirements:
   host:
-  - python ${{ python_min }}.*
-  - pip
-  - setuptools
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
   run:
-  - python >=${{ python_min }}
-  - pystac-client >=0.7.7
-  - pystac >=1.10.1
-  - rasterio >=1.3.10
-  - affine >=2.4.0
-  - pandas >=2.2.2
-  - numpy >=1.26.4
-  - shapely >=2.0.4
-  - zarr >3
-  - geopandas >=0.14.4
-  - planetary-computer >=1.0
-  - scipy >=1.13.0
-  - pytorch >=2.3.0
-  - joblib >=1.4.2
-  - tqdm >=4.66.4
-  - sen2nbar >=2024.6.0
-  - xarray >=2025.3.1
-  - filelock >=3.0.0
+    - python >=${{ python_min }}
+    - pystac-client >=0.7.7
+    - pystac >=1.10.1
+    - rasterio >=1.3.10
+    - affine >=2.4.0
+    - pandas >=2.2.2
+    - numpy >=1.26.4
+    - shapely >=2.0.4
+    - zarr >3
+    - geopandas >=0.14.4
+    - planetary-computer >=1.0
+    - scipy >=1.13.0
+    - pytorch >=2.3.0
+    - joblib >=1.4.2
+    - tqdm >=4.66.4
+    - sen2nbar >=2024.6.0
+    - xarray >=2025.3.1
+    - filelock >=3.0.0
 
 tests:
-- python:
-    imports:
-    - sentle
-    pip_check: true
-    python_version: ${{ python_min }}.*
+  - python:
+      imports:
+        - sentle
+      pip_check: true
+      python_version: ${{ python_min }}.*
 
 about:
   summary: Sentinel-1 and Sentinel-2 scalable downloader
