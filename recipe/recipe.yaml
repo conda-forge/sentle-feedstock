@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "2026.6.1"
+  version: "2026.6.4"
   python_min: '3.11'
 
 package:
@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/s/sentle/sentle-${{ version }}.tar.gz
-    sha256: b27856d0e2b2f84d21e68a1c5d020a5db19a183e45f366210e7d2d65f1a11b14
+    sha256: 792f7c7dc544a3a2925b44932056ecb23c7cf3a7702a0993b4c3cc2ff021efc6
 
 build:
   script: ${{ PYTHON }} -m pip install .
